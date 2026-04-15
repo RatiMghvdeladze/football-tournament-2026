@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>ფეხბურთის ჩემპიონატი</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0a0e27;
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .background-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 121, 198, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+        }
+
+        /* Modern Tab Navigation */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+            background: rgba(255,255,255,0.05);
+            padding: 8px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab {
+            padding: 12px 24px;
+            background: transparent;
+            color: rgba(255,255,255,0.6);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: clamp(0.85rem, 2vw, 1rem);
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .tab:hover {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.9);
+        }
+
+        .tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .content {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        /* Modern Card Grid */
+        .groups-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .standings-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* Glass Morphism Cards */
+        .group {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .group:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .group-header {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .group-team {
+            padding: 12px 16px;
+            margin: 8px 0;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.2s ease;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .group-team:hover {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: rgba(102, 126, 234, 0.3);
+            transform: translateX(4px);
+        }
+
+        /* Modern Table Design */
+        .standings-table {
+            width: 100%;
+            border-radius: 12px;
+            overflow: visible;
+            margin-top: 16px;
+        }
+
+        .standings-table table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .standings-table th {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            color: white;
+            padding: 10px 4px;
+            text-align: center;
+            font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .standings-table th:first-child {
+            width: 5%;
+        }
+
+        .standings-table th:nth-child(2) {
+            width: auto;
+            text-align: left;
+            padding-left: 8px;
+        }
+
+        .standings-table th:not(:first-child):not(:nth-child(2)) {
+            width: 7%;
+        }
+
+        .standings-table td {
+            padding: 10px 2px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+            text-align: center;
+        }
+
+        .standings-table td:nth-child(2) {
+            text-align: left;
+            padding-left: 8px;
+            padding-right: 8px;
+            font-weight: 600;
+        }
+
+        .standings-table tr {
+            transition: all 0.2s ease;
+        }
+
+        .standings-table tr:hover {
+            background: rgba(102, 126, 234, 0.08);
+        }
+
+        .standings-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .position {
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .qualified {
+            background: rgba(34, 197, 94, 0.1) !important;
+            border-left: 3px solid #22c55e !important;
+        }
+
+        .qualified-second {
+            background: rgba(234, 179, 8, 0.1) !important;
+            border-left: 3px solid #eab308 !important;
+        }
+
+        /* Modern Playoff Bracket */
+        .playoff-bracket {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 30px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(102, 126, 234, 0.5) transparent;
+        }
+
+        .playoff-bracket::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .playoff-bracket::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+        }
+
+        .playoff-bracket::-webkit-scrollbar-thumb {
+            background: rgba(102, 126, 234, 0.5);
+            border-radius: 4px;
+        }
+
+        .bracket-container {
+            display: flex;
+            gap: clamp(20px, 5vw, 50px);
+            justify-content: center;
+            min-width: max-content;
+            padding: 20px 0;
+        }
+
+        .bracket-round {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            min-height: 400px;
+        }
+
+        .bracket-round h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bracket-match {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            padding: 12px;
+            margin: 10px 0;
+            min-width: clamp(160px, 25vw, 220px);
+            transition: all 0.3s ease;
+        }
+
+        .bracket-match:hover {
+            background: rgba(102, 126, 234, 0.08);
+            border-color: rgba(102, 126, 234, 0.5);
+            transform: scale(1.02);
+        }
+
+        .bracket-team {
+            padding: 10px 12px;
+            margin: 6px 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: clamp(0.8rem, 2vw, 0.95rem);
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .bracket-team:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+        .bracket-team.qualified {
+            background: rgba(34, 197, 94, 0.15) !important;
+            border-color: #22c55e !important;
+            font-weight: 600;
+        }
+
+        /* Scorers List */
+        .scorers-list {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 30px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-top: 20px;
+        }
+
+        .scorers-list h2 {
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stage-complete {
+            background: rgba(34, 197, 94, 0.15);
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 16px;
+            text-align: center;
+            font-weight: 600;
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 1024px) {
+            .groups-container,
+            .standings-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 12px;
+            }
+
+            header {
+                margin-bottom: 20px;
+            }
+
+            .tabs {
+                margin-bottom: 20px;
+            }
+
+            .group {
+                padding: 14px;
+            }
+
+            .standings-table th,
+            .standings-table td {
+                padding: 8px 3px;
+                font-size: 0.7rem;
+            }
+
+            .standings-table th:nth-child(2),
+            .standings-table td:nth-child(2) {
+                padding-left: 6px;
+            }
+
+            .bracket-container {
+                gap: 20px;
+            }
+
+            .scorers-list {
+                padding: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .tab {
+                padding: 10px 14px;
+                font-size: 0.8rem;
+            }
+
+            .group {
+                padding: 12px;
+            }
+
+            .group-header {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+
+            .standings-table th,
+            .standings-table td {
+                padding: 7px 2px;
+                font-size: 0.65rem;
+            }
+
+            .standings-table th:nth-child(2),
+            .standings-table td:nth-child(2) {
+                padding-left: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-pattern"></div>
+    
+    <div class="container">
+        <header>
+            <h1>⚽ KIU-ს ფეხბურთის ჩემპიონატი</h1>
+            <p class="subtitle">2025</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('draw')">კენჭისყრა</button>
+            <button class="tab" onclick="showTab('standings')">ტურნირის ცხრილი</button>
+            <button class="tab" onclick="showTab('playoff')">პლეი-ოფი</button>
+            <button class="tab" onclick="showTab('scorers')">ბომბარდირები</button>
+        </div>
+
+        <div id="draw" class="content active">
+            <div class="groups-container">
+                <div class="group">
+                    <div class="group-header">ჯგუფი A</div>
+                    <div id="groupA"></div>
+                </div>
+                <div class="group">
+                    <div class="group-header">ჯგუფი B</div>
+                    <div id="groupB"></div>
+                </div>
+                <div class="group">
+                    <div class="group-header">ჯგუფი C</div>
+                    <div id="groupC"></div>
+                </div>
+                <div class="group">
+                    <div class="group-header">ჯგუფი D</div>
+                    <div id="groupD"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="standings" class="content">
+            <div class="standings-container">
+                <div class="group" id="standingsA"></div>
+                <div class="group" id="standingsB"></div>
+                <div class="group" id="standingsC"></div>
+                <div class="group" id="standingsD"></div>
+            </div>
+        </div>
+
+        <div id="playoff" class="content">
+            <div class="playoff-bracket">
+                <h2 style="text-align: center; margin-bottom: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">პლეი-ოფი</h2>
+                <div id="groupStageStatus"></div>
+                <div class="bracket-container" id="bracketContainer"></div>
+            </div>
+        </div>
+
+        <div id="scorers" class="content">
+            <div class="scorers-list">
+                <h2>ბომბარდირების ცხრილი</h2>
+                <div id="topScorersTable"></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    if (window.performance && window.performance.navigation.type === 2) {
+        window.location.reload();
+    }
+
+    let groups, standings, scorers, playoffMatches;
+
+    async function loadTournamentData() {
+        try {
+            const response = await fetch('https://raw.githubusercontent.com/RatiMghvdeladze/football-tournament-2025/main/tournament-data.json');
+            
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            
+            const tournamentData = await response.json();
+            initializeApp(tournamentData);
+        } catch (error) {
+            console.error('Error loading tournament data:', error);
+            document.body.innerHTML = `
+                <div style="color: white; text-align: center; padding: 50px;">
+                    <h2>Error loading tournament data</h2>
+                    <p>Please check your internet connection and try again.</p>
+                    <button onclick="location.reload()" style="padding: 12px 24px; margin-top: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: 600;">Retry</button>
+                </div>
+            `;
+        }
+    }
+
+    function initializeApp(tournamentData) {
+        groups = tournamentData.groups;
+        standings = tournamentData.standings;
+        scorers = tournamentData.scorers;
+        playoffMatches = tournamentData.playoffMatches;
+
+        updateGroupDisplay();
+        updateStandings();
+        updatePlayoff();
+        updateTopScorers();
+    }
+
+    function updateGroupDisplay() {
+        ['A', 'B', 'C', 'D'].forEach(group => {
+            const container = document.getElementById(`group${group}`);
+            if (!container) return;
+            
+            container.innerHTML = '';
+            groups[group].forEach(team => {
+                const div = document.createElement('div');
+                div.className = 'group-team';
+                div.innerHTML = `<span>${team}</span>`;
+                container.appendChild(div);
+            });
+        });
+    }
+
+    function updateStandings() {
+        ['A', 'B', 'C', 'D'].forEach(group => {
+            const container = document.getElementById(`standings${group}`);
+            if (!container || !standings[group]) return;
+            
+            const sorted = Object.entries(standings[group])
+                .sort(([,a], [,b]) => b.points - a.points || b.gd - a.gd || b.gf - a.gf);
+
+            container.innerHTML = `
+                <div class="group-header">ჯგუფი ${group}</div>
+                <div class="standings-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>გუნდი</th>
+                                <th>თ</th>
+                                <th>მ</th>
+                                <th>ფ</th>
+                                <th>წ</th>
+                                <th>გტ</th>
+                                <th>გშ</th>
+                                <th>სხ</th>
+                                <th>ქლ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${sorted.map(([team, stats], index) => `
+                                <tr class="${index === 0 ? 'qualified' : index === 1 || index === 2 ? 'qualified-second' : ''}">
+                                    <td class="position">${index + 1}</td>
+                                    <td><strong>${team}</strong></td>
+                                    <td>${stats.played || 0}</td>
+                                    <td>${stats.won || 0}</td>
+                                    <td>${stats.drawn || 0}</td>
+                                    <td>${stats.lost || 0}</td>
+                                    <td>${stats.gf || 0}</td>
+                                    <td>${stats.ga || 0}</td>
+                                    <td>${stats.gd > 0 ? '+' : ''}${stats.gd || 0}</td>
+                                    <td><strong>${stats.points || 0}</strong></td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        });
+    }
+
+    function updatePlayoff() {
+        const statusContainer = document.getElementById('groupStageStatus');
+        const bracket = document.getElementById('bracketContainer');
+        
+        if (!statusContainer || !bracket) return;
+        
+        statusContainer.innerHTML = '';
+        
+        bracket.innerHTML = `
+            <div class="bracket-round">
+                <h3>მერვედფინალი</h3>
+                ${playoffMatches.round16.map(match => `
+                    <div class="bracket-match">
+                        <div class="bracket-team ${match.winner === match.team1 ? 'qualified' : ''}">
+                            <span>${match.team1}</span>
+                            <span>${match.score1 !== null ? 
+                                (match.penaltyScore1 !== null ? 
+                                    `${match.score1}(${match.penaltyScore1})` : 
+                                    match.score1) : 
+                                ''}</span>
+                        </div>
+                        <div class="bracket-team ${match.winner === match.team2 ? 'qualified' : ''}">
+                            <span>${match.team2}</span>
+                            <span>${match.score2 !== null ? 
+                                (match.penaltyScore2 !== null ? 
+                                    `${match.score2}(${match.penaltyScore2})` : 
+                                    match.score2) : 
+                                ''}</span>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="bracket-round">
+                <h3>მეოთხედფინალი</h3>
+                ${playoffMatches.quarter.map(match => `
+                    <div class="bracket-match">
+                        <div class="bracket-team ${match.winner === match.team1 ? 'qualified' : ''}">
+                            <span>${match.team1 || 'TBD'}</span>
+                            <span>${match.score1 !== null ? 
+                                (match.penaltyScore1 !== null ? 
+                                    `${match.score1}(${match.penaltyScore1})` : 
+                                    match.score1) : 
+                                ''}</span>
+                        </div>
+                        <div class="bracket-team ${match.winner === match.team2 ? 'qualified' : ''}">
+                            <span>${match.team2 || 'TBD'}</span>
+                            <span>${match.score2 !== null ? 
+                                (match.penaltyScore2 !== null ? 
+                                    `${match.score2}(${match.penaltyScore2})` : 
+                                    match.score2) : 
+                                ''}</span>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="bracket-round">
+                <h3>ნახევარფინალი</h3>
+                ${playoffMatches.semi.map(match => `
+                    <div class="bracket-match">
+                        <div class="bracket-team ${match.winner === match.team1 ? 'qualified' : ''}">
+                            <span>${match.team1 || 'TBD'}</span>
+                            <span>${match.score1 !== null ? 
+                                (match.penaltyScore1 !== null ? 
+                                    `${match.score1}(${match.penaltyScore1})` : 
+                                    match.score1) : 
+                                ''}</span>
+                        </div>
+                        <div class="bracket-team ${match.winner === match.team2 ? 'qualified' : ''}">
+                            <span>${match.team2 || 'TBD'}</span>
+                            <span>${match.score2 !== null ? 
+                                (match.penaltyScore2 !== null ? 
+                                    `${match.score2}(${match.penaltyScore2})` : 
+                                    match.score2) : 
+                                ''}</span>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="bracket-round">
+                <h3>ფინალი</h3>
+                ${playoffMatches.final.map(match => `
+                    <div class="bracket-match">
+                        <div class="bracket-team ${match.winner === match.team1 ? 'qualified' : ''}">
+                            <span>${match.team1 || 'TBD'}</span>
+                            <span>${match.score1 !== null ? 
+                                (match.penaltyScore1 !== null ? 
+                                    `${match.score1}(${match.penaltyScore1})` : 
+                                    match.score1) : 
+                                ''}</span>
+                        </div>
+                        <div class="bracket-team ${match.winner === match.team2 ? 'qualified' : ''}">
+                            <span>${match.team2 || 'TBD'}</span>
+                            <span>${match.score2 !== null ? 
+                                (match.penaltyScore2 !== null ? 
+                                    `${match.score2}(${match.penaltyScore2})` : 
+                                    match.score2) : 
+                                ''}</span>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    function updateTopScorers() {
+        const container = document.getElementById('topScorersTable');
+        if (!container) return;
+        
+        const playerGoals = {};
+        
+        scorers.forEach(scorer => {
+            if (!playerGoals[scorer.player]) {
+                playerGoals[scorer.player] = {
+                    player: scorer.player,
+                    team: scorer.team,
+                    goals: 0
+                };
+            }
+            playerGoals[scorer.player].goals += scorer.goals;
+        });
+        
+        const sortedScorers = Object.values(playerGoals).sort((a, b) => b.goals - a.goals);
+        
+        if (sortedScorers.length === 0) {
+            container.innerHTML = '<p style="text-align: center; color: rgba(255,255,255,0.6); padding: 20px;">ჯერ არ არის შეყვანილი გოლები.</p>';
+            return;
+        }
+        
+        container.innerHTML = `
+            <div class="standings-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 8%;">#</th>
+                            <th style="width: auto; text-align: left;">მოთამაშე</th>
+                            <th style="width: 20%; text-align: right;">გოლები</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${sortedScorers.map((scorer, index) => `
+                            <tr>
+                                <td class="position">${index + 1}</td>
+                                <td style="text-align: left; padding-left: 8px;">
+                                    <strong>${scorer.player}</strong>
+                                    <div style="font-size: 0.75em; color: rgba(255,255,255,0.5); margin-top: 2px;">${scorer.team}</div>
+                                </td>
+                                <td style="text-align: right; padding-right: 8px;"><strong>${scorer.goals}</strong></td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
+        `;
+    }
+
+    function showTab(tabName) {
+        document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.getElementById(tabName).classList.add('active');
+        event.target.classList.add('active');
+    }
+
+    loadTournamentData();
+</script>
+</body>
+</html>
