@@ -1,4 +1,4 @@
-# ⚽ KIU-ს ფეხბურთის ჩემპიონატი 2025
+# ⚽ KIU-ს ფეხბურთის ჩემპიონატი 2026
 
 ![Tournament Website](https://img.shields.io/badge/Tournament-Football-blue)
 ![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-brightgreen)
@@ -8,7 +8,7 @@
 
 ## 🌐 Live Demo
 
-**[https://ratimghvdeladze.github.io/football-tournament-2025/](https://ratimghvdeladze.github.io/football-tournament-2025/)**
+**[https://ratimghvdeladze.github.io/football-tournament-2025/](https://ratimghvdeladze.github.io/football-tournament-2026/)**
 
 ## ✨ ფუნქციონალი
 
