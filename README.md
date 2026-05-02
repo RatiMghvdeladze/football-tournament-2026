@@ -8,7 +8,7 @@
 
 ## 🌐 Live Demo
 
-**[https://ratimghvdeladze.github.io/football-tournament-2025/](https://ratimghvdeladze.github.io/football-tournament-2026/)**
+**[https://ratimghvdeladze.github.io/football-tournament-2026/](https://ratimghvdeladze.github.io/football-tournament-2026/)**
 
 ## ✨ ფუნქციონალი
 
