@@ -627,7 +627,7 @@
                         </thead>
                         <tbody>
                             ${sorted.map(([team, stats], index) => `
-                                <tr class="${index === 0 ? 'qualified' : index === 1 || index === 2 ? 'qualified-second' : ''}">
+                                <tr class="${index === 0 ? 'qualified' : index === 1 ? 'qualified-second' : ''}">
                                     <td class="position">${index + 1}</td>
                                     <td><strong>${team}</strong></td>
                                     <td>${stats.played || 0}</td>
@@ -656,29 +656,6 @@
         statusContainer.innerHTML = '';
         
         bracket.innerHTML = `
-            <div class="bracket-round">
-                <h3>მერვედფინალი</h3>
-                ${playoffMatches.round16.map(match => `
-                    <div class="bracket-match">
-                        <div class="bracket-team ${match.winner === match.team1 ? 'qualified' : ''}">
-                            <span>${match.team1}</span>
-                            <span>${match.score1 !== null ? 
-                                (match.penaltyScore1 !== null ? 
-                                    `${match.score1}(${match.penaltyScore1})` : 
-                                    match.score1) : 
-                                ''}</span>
-                        </div>
-                        <div class="bracket-team ${match.winner === match.team2 ? 'qualified' : ''}">
-                            <span>${match.team2}</span>
-                            <span>${match.score2 !== null ? 
-                                (match.penaltyScore2 !== null ? 
-                                    `${match.score2}(${match.penaltyScore2})` : 
-                                    match.score2) : 
-                                ''}</span>
-                        </div>
-                    </div>
-                `).join('')}
-            </div>
             <div class="bracket-round">
                 <h3>მეოთხედფინალი</h3>
                 ${playoffMatches.quarter.map(match => `
