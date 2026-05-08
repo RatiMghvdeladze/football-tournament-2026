@@ -7,23 +7,23 @@
       "გუნდი"
     ],
     "B": [
+      "კატალონიის ზაოდი",
       "უჯარიმოდ",
       "სანჩიკი",
-      "პომპეი",
-      "კატალონიის ზაოდი"
+      "პომპეი"
     ],
     "C": [
-      "UNDERDOGSSS",
+      "404 error",
       "თუ მაჩი",
       "koshka",
-      "404 error"
+      "UNDERDOGSSS"
     ],
     "D": [
       "დიდი გზა",
-      "8 კათხა",
       "ტანკისტები",
-      "FC QSORVOSTVIS",
-      "ფუსუ trivela"
+      "ფუსუ trivela",
+      "8 კათხა",
+      "FC QSORVOSTVIS"
     ]
   },
   "standings": {
@@ -39,24 +39,24 @@
         "points": 0
       },
       "საძმო": {
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "drawn": 0,
+        "drawn": 1,
         "lost": 0,
-        "gf": 0,
-        "ga": 0,
+        "gf": 1,
+        "ga": 1,
         "gd": 0,
-        "points": 0
+        "points": 1
       },
       "Phoenix": {
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "drawn": 0,
+        "drawn": 1,
         "lost": 0,
-        "gf": 0,
-        "ga": 0,
+        "gf": 1,
+        "ga": 1,
         "gd": 0,
-        "points": 0
+        "points": 1
       },
       "გუნდი": {
         "played": 0,
@@ -70,148 +70,441 @@
       }
     },
     "B": {
-      "უჯარიმოდ": {
-        "played": 0,
-        "won": 0,
+      "კატალონიის ზაოდი": {
+        "played": 2,
+        "won": 2,
         "drawn": 0,
         "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
+        "gf": 7,
+        "ga": 2,
+        "gd": 5,
+        "points": 6
+      },
+      "უჯარიმოდ": {
+        "played": 2,
+        "won": 1,
+        "drawn": 1,
+        "lost": 0,
+        "gf": 5,
+        "ga": 4,
+        "gd": 1,
+        "points": 4
       },
       "სანჩიკი": {
-        "played": 0,
+        "played": 2,
         "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
+        "drawn": 1,
+        "lost": 1,
+        "gf": 1,
+        "ga": 5,
+        "gd": -4,
+        "points": 1
       },
       "პომპეი": {
-        "played": 0,
+        "played": 2,
         "won": 0,
         "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
-      "კატალონიის ზაოდი": {
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
+        "lost": 2,
+        "gf": 5,
+        "ga": 7,
+        "gd": -2,
         "points": 0
       }
     },
     "C": {
-      "UNDERDOGSSS": {
-        "played": 0,
-        "won": 0,
+      "404 error": {
+        "played": 1,
+        "won": 1,
         "drawn": 0,
         "lost": 0,
-        "gf": 0,
+        "gf": 3,
         "ga": 0,
-        "gd": 0,
-        "points": 0
+        "gd": 3,
+        "points": 3
       },
       "თუ მაჩი": {
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "drawn": 0,
         "lost": 0,
-        "gf": 0,
+        "gf": 7,
         "ga": 0,
-        "gd": 0,
-        "points": 0
+        "gd": 7,
+        "points": 3
       },
       "koshka": {
-        "played": 0,
+        "played": 1,
         "won": 0,
         "drawn": 0,
-        "lost": 0,
+        "lost": 1,
         "gf": 0,
-        "ga": 0,
-        "gd": 0,
+        "ga": 3,
+        "gd": -3,
         "points": 0
       },
-      "404 error": {
-        "played": 0,
+      "UNDERDOGSSS": {
+        "played": 1,
         "won": 0,
         "drawn": 0,
-        "lost": 0,
+        "lost": 1,
         "gf": 0,
-        "ga": 0,
-        "gd": 0,
+        "ga": 7,
+        "gd": -7,
         "points": 0
       }
     },
     "D": {
       "დიდი გზა": {
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "drawn": 0,
         "lost": 0,
-        "gf": 0,
+        "gf": 3,
         "ga": 0,
-        "gd": 0,
+        "gd": 3,
+        "points": 3
+      },
+      "ტანკისტები": {
+        "played": 2,
+        "won": 2,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 5,
+        "ga": 2,
+        "gd": 3,
+        "points": 6
+      },
+      "ფუსუ trivela": {
+        "played": 2,
+        "won": 0,
+        "drawn": 0,
+        "lost": 2,
+        "gf": 1,
+        "ga": 5,
+        "gd": -4,
         "points": 0
       },
       "8 კათხა": {
-        "played": 0,
+        "played": 2,
         "won": 0,
         "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
-      "ტანკისტები": {
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
+        "lost": 2,
+        "gf": 2,
+        "ga": 5,
+        "gd": -3,
         "points": 0
       },
       "FC QSORVOSTVIS": {
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "drawn": 0,
         "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
-      },
-      "ფუსუ trivela": {
-        "played": 0,
-        "won": 0,
-        "drawn": 0,
-        "lost": 0,
-        "gf": 0,
-        "ga": 0,
-        "gd": 0,
-        "points": 0
+        "gf": 2,
+        "ga": 1,
+        "gd": 1,
+        "points": 3
       }
     }
   },
-  "matches": [],
-  "scorers": [],
+  "matches": [
+    {
+      "group": "D",
+      "home": "ტანკისტები",
+      "away": "ფუსუ trivela",
+      "homeScore": 2,
+      "awayScore": 1,
+      "id": 1778271918391
+    },
+    {
+      "group": "C",
+      "home": "თუ მაჩი",
+      "away": "UNDERDOGSSS",
+      "homeScore": 7,
+      "awayScore": 0,
+      "id": 1778271961919
+    },
+    {
+      "group": "D",
+      "home": "დიდი გზა",
+      "away": "ფუსუ trivela",
+      "homeScore": 3,
+      "awayScore": 0,
+      "id": 1778271971448
+    },
+    {
+      "group": "A",
+      "home": "Phoenix",
+      "away": "საძმო",
+      "homeScore": 1,
+      "awayScore": 1,
+      "id": 1778271985945
+    },
+    {
+      "group": "B",
+      "home": "პომპეი",
+      "away": "კატალონიის ზაოდი",
+      "homeScore": 2,
+      "awayScore": 3,
+      "id": 1778272004476
+    },
+    {
+      "group": "D",
+      "home": "ტანკისტები",
+      "away": "8 კათხა",
+      "homeScore": 3,
+      "awayScore": 1,
+      "id": 1778272030539
+    },
+    {
+      "group": "B",
+      "home": "კატალონიის ზაოდი",
+      "away": "სანჩიკი",
+      "homeScore": 4,
+      "awayScore": 0,
+      "id": 1778272045991
+    },
+    {
+      "group": "D",
+      "home": "FC QSORVOSTVIS",
+      "away": "8 კათხა",
+      "homeScore": 2,
+      "awayScore": 1,
+      "id": 1778272061160
+    },
+    {
+      "group": "C",
+      "home": "404 error",
+      "away": "koshka",
+      "homeScore": 3,
+      "awayScore": 0,
+      "id": 1778272077920
+    },
+    {
+      "group": "B",
+      "home": "უჯარიმოდ",
+      "away": "პომპეი",
+      "homeScore": 4,
+      "awayScore": 3,
+      "id": 1778272088404
+    },
+    {
+      "group": "B",
+      "home": "უჯარიმოდ",
+      "away": "სანჩიკი",
+      "homeScore": 1,
+      "awayScore": 1,
+      "id": 1778272206413
+    }
+  ],
+  "scorers": [
+    {
+      "player": "თემური დაღუნდარიძე",
+      "team": "ტანკისტები",
+      "goals": 1,
+      "matchId": "group_1778271918391",
+      "matchType": "group"
+    },
+    {
+      "player": "დავითი მათიაშვილი",
+      "team": "ტანკისტები",
+      "goals": 1,
+      "matchId": "group_1778271918391",
+      "matchType": "group"
+    },
+    {
+      "player": "საბა ჭუმბურიძე",
+      "team": "ფუსუ trivela",
+      "goals": 1,
+      "matchId": "group_1778271918391",
+      "matchType": "group"
+    },
+    {
+      "player": "ლუკა ნარსია",
+      "team": "თუ მაჩი",
+      "goals": 3,
+      "matchId": "group_1778271961919",
+      "matchType": "group"
+    },
+    {
+      "player": "დავით ტაბატაძე",
+      "team": "თუ მაჩი",
+      "goals": 3,
+      "matchId": "group_1778271961919",
+      "matchType": "group"
+    },
+    {
+      "player": "მიხეილ დადიანი",
+      "team": "თუ მაჩი",
+      "goals": 1,
+      "matchId": "group_1778271961919",
+      "matchType": "group"
+    },
+    {
+      "player": "ლუკა ხაჭაპურიძე",
+      "team": "დიდი გზა",
+      "goals": 2,
+      "matchId": "group_1778271971448",
+      "matchType": "group"
+    },
+    {
+      "player": "ცოტნე კალებაშვილი",
+      "team": "დიდი გზა",
+      "goals": 1,
+      "matchId": "group_1778271971448",
+      "matchType": "group"
+    },
+    {
+      "player": "თამაზ შალამბერიძე",
+      "team": "Phoenix",
+      "goals": 1,
+      "matchId": "group_1778271985945",
+      "matchType": "group"
+    },
+    {
+      "player": "ილია ფხაკაძე",
+      "team": "საძმო",
+      "goals": 1,
+      "matchId": "group_1778271985945",
+      "matchType": "group"
+    },
+    {
+      "player": "ზაზუკა კარსანიძე",
+      "team": "პომპეი",
+      "goals": 1,
+      "matchId": "group_1778272004476",
+      "matchType": "group"
+    },
+    {
+      "player": "ლუკა დუმბაძე",
+      "team": "ტანკისტები",
+      "goals": 1,
+      "matchId": "group_1778272030539",
+      "matchType": "group"
+    },
+    {
+      "player": "ნიკოლოზ კვინიკაძე",
+      "team": "ტანკისტები",
+      "goals": 1,
+      "matchId": "group_1778272030539",
+      "matchType": "group"
+    },
+    {
+      "player": "სანდრო სარალიძე",
+      "team": "ტანკისტები",
+      "goals": 1,
+      "matchId": "group_1778272030539",
+      "matchType": "group"
+    },
+    {
+      "player": "დემეტრე ხაჭაპურიძე",
+      "team": "8 კათხა",
+      "goals": 1,
+      "matchId": "group_1778272030539",
+      "matchType": "group"
+    },
+    {
+      "player": "კირთაძე დავით",
+      "team": "კატალონიის ზაოდი",
+      "goals": 2,
+      "matchId": "group_1778272045991",
+      "matchType": "group"
+    },
+    {
+      "player": "ფხალაძე ამირან",
+      "team": "კატალონიის ზაოდი",
+      "goals": 1,
+      "matchId": "group_1778272045991",
+      "matchType": "group"
+    },
+    {
+      "player": "კვირკვაია გიორგი",
+      "team": "კატალონიის ზაოდი",
+      "goals": 1,
+      "matchId": "group_1778272045991",
+      "matchType": "group"
+    },
+    {
+      "player": "გიორგი კორძაძე",
+      "team": "8 კათხა",
+      "goals": 1,
+      "matchId": "group_1778272061160",
+      "matchType": "group"
+    },
+    {
+      "player": "ალექსანდრე ჯელია",
+      "team": "FC QSORVOSTVIS",
+      "goals": 1,
+      "matchId": "group_1778272061160",
+      "matchType": "group"
+    },
+    {
+      "player": "ნიკოლოზ ჯავაშვილი",
+      "team": "FC QSORVOSTVIS",
+      "goals": 1,
+      "matchId": "group_1778272061160",
+      "matchType": "group"
+    },
+    {
+      "player": "დავით დავითაია",
+      "team": "404 error",
+      "goals": 1,
+      "matchId": "group_1778272077920",
+      "matchType": "group"
+    },
+    {
+      "player": "გიორგი ბენიძე",
+      "team": "404 error",
+      "goals": 1,
+      "matchId": "group_1778272077920",
+      "matchType": "group"
+    },
+    {
+      "player": "ვასკა კახნიაშვილი",
+      "team": "404 error",
+      "goals": 1,
+      "matchId": "group_1778272077920",
+      "matchType": "group"
+    },
+    {
+      "player": "ლუკა ტურაშვილი",
+      "team": "უჯარიმოდ",
+      "goals": 1,
+      "matchId": "group_1778272088404",
+      "matchType": "group"
+    },
+    {
+      "player": "გიორგი კოღუაშვილი",
+      "team": "უჯარიმოდ",
+      "goals": 3,
+      "matchId": "group_1778272088404",
+      "matchType": "group"
+    },
+    {
+      "player": "ზაზუკა კარსანიძე",
+      "team": "პომპეი",
+      "goals": 3,
+      "matchId": "group_1778272088404",
+      "matchType": "group"
+    },
+    {
+      "player": "თორნიკე ვარშალომიძე",
+      "team": "უჯარიმოდ",
+      "goals": 1,
+      "matchId": "group_1778272206413",
+      "matchType": "group"
+    },
+    {
+      "player": "დაჩი ჩადუნელი",
+      "team": "სანჩიკი",
+      "goals": 1,
+      "matchId": "group_1778272206413",
+      "matchType": "group"
+    }
+  ],
   "playoffMatches": {
     "quarter": [],
     "semi": [],
     "final": []
   },
-  "exportDate": "2026-05-02T16:20:47.214Z"
+  "exportDate": "2026-05-08T20:43:19.899Z"
 }
