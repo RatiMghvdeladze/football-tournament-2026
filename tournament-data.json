@@ -1,0 +1,217 @@
+{
+  "groups": {
+    "A": [
+      "blue lock project",
+      "საძმო",
+      "Phoenix",
+      "გუნდი"
+    ],
+    "B": [
+      "უჯარიმოდ",
+      "სანჩიკი",
+      "პომპეი",
+      "კატალონიის ზაოდი"
+    ],
+    "C": [
+      "UNDERDOGSSS",
+      "თუ მაჩი",
+      "koshka",
+      "404 error"
+    ],
+    "D": [
+      "დიდი გზა",
+      "8 კათხა",
+      "ტანკისტები",
+      "FC QSORVOSTVIS",
+      "ფუსუ trivela"
+    ]
+  },
+  "standings": {
+    "A": {
+      "blue lock project": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      "საძმო": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      "Phoenix": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      "გუნდი": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      }
+    },
+    "B": {
+      "უჯარიმოდ": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      "სანჩიკი": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      "პომპეი": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      "კატალონიის ზაოდი": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      }
+    },
+    "C": {
+      "UNDERDOGSSS": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      "თუ მაჩი": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      "koshka": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      "404 error": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      }
+    },
+    "D": {
+      "დიდი გზა": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      "8 კათხა": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      "ტანკისტები": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      "FC QSORVOSTVIS": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      },
+      "ფუსუ trivela": {
+        "played": 0,
+        "won": 0,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 0,
+        "ga": 0,
+        "gd": 0,
+        "points": 0
+      }
+    }
+  },
+  "matches": [],
+  "scorers": [],
+  "playoffMatches": {
+    "quarter": [],
+    "semi": [],
+    "final": []
+  },
+  "exportDate": "2026-05-02T16:20:47.214Z"
+}
